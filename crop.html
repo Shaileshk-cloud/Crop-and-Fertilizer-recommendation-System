@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop and Fertilizer Recomendation</title>
+    <link rel="shortcut icon"  href="/static/blacktree.png"  type="imag/png">
+  
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-image: url('/static/background3.jpg');
+            background-size: cover;
+            
+        }
+        header{
+            text-align:center;
+            background-color: rgba(213, 214, 200, 0.694);
+             
+            color: #ffffff;
+            margin:0;
+            padding:10px;
+            position: sticky;
+            width:100%;
+            top:0;
+        }
+        footer{
+            text-align:center;
+            background-color: black;
+            color: #ffffff;
+            margin:0;
+            padding:1px;
+            position:fixed;
+            bottom: 0;
+            width:100%;
+        }
+        .table1{
+              
+              background-color: rgba(137, 148, 149, 0.527);
+              margin-left:450px;;
+              padding: 30px;
+              border-radius: 20px;
+              margin-top: 40px;
+              width:600px;
+              cursor: not-allowed;
+              box-shadow:5px 5px 5px  rgb(180, 127, 54) ;
+        }
+        .table2{
+              
+            background-color: rgba(255, 255, 255, 0);
+            margin-left:170px;
+            padding: 5px;
+            border-radius: 20px;
+            margin-top: 40px;
+            height:100px;
+            margin-right:10px;
+            color:#ffffff;
+        }
+        td{
+            padding:10px;
+        }
+        input[type="number"]
+        {
+            padding:10px 10px;
+            padding-left: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            width:90%;
+        }
+        input[type="submit"]
+        {
+            padding:13px 60px;
+            border-radius: 30px;
+            border:2px solid  #000000;
+            background-color: #ffffff;
+            font-weight: bold;
+            font-size: large;
+            
+            
+        }
+        input[type="submit"]:hover{
+            border:2px solid #ffffff;
+            background-color:#000000;
+            color:#ffffff;
+            transition: 0.5s;
+        }
+        h1{
+           text-shadow: 3px 3px 3px   rgb(6, 2, 2);
+        }
+        label{
+            font-size: large;
+            font-weight: bold;
+        }
+        span{
+            margin-top:30px;
+        }
+        .details{
+            border-radius: 10px;
+        }
+        .details:hover, .sideimg:hover,.sidebar:hover{
+            background-color:rgb(211, 157, 215);
+            border:2px solid black;
+            border-radius:10px;
+            text-align:center;
+            color:black;
+
+        }
+        .sideimg{
+            
+            border-radius:10px;
+            background-color:rgb(0, 0, 0);
+            border:1px solid black;
+        }
+        .sidebar{
+            padding:0px;
+        }
+       
+
+
+    </style>
+</head>
+<body>
+    <header >
+        <h1>CROP RECOMENDATION SYSTEM <img  src="/static/colortree.png">
+            
+        </h1>
+        
+    
+    </header>
+    <div  style="display:flex;">
+    <table class="table1" >
+            <form action="/predict" method="POST">
+                <tr>
+                    <td>
+                       <label for="n">Nitrogen </label> 
+                    </td>
+                    <td>
+                       <input id="n"  step="0.1"   type="number" name="nitrogen" placeholder="N" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="p">Phosphorus </label> 
+                    </td>
+                    <td>
+                       <input id="p"     type="number" name="phosphorus"  placeholder="P"    required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="k">Potassium </label> 
+                    </td>
+                    <td>
+                       <input id="k"     type="number" name="potassium" placeholder="K" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="c">Temperature </label> 
+                    </td>
+                    <td>
+                       <input id="c"     type="number" name="temperature" placeholder="C" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="h">Humidity </label> 
+                    </td>
+                    <td>
+                       <input id="h"     type="number" name="humidity" placeholder="%"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="ph">pH Level </label> 
+                    </td>
+                    <td>
+                       <input id="ph"  step="0.1"   type="number" name="ph"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="r">Rainfall </label> 
+                    </td>
+                    <td>
+                       <input id="r"  step="0.1"   type="number" name="rainfall" placeholder="mm" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="text-align: center;"  colspan="2">
+                        <input type="submit" value="Submit" >
+                    </td>
+                </tr>
+            </form>
+           
+    </table>
+    <table class="table2">
+        <tr  class="sidebar">
+            <td class="details" >
+                <h4>8147186595</h4>
+            </td>
+            <td  class="sideimg">
+    <img  src="/static/smallwhatsapp.png">
+            </td>
+        </tr>
+        <tr   class="sidebar">
+            <td class="details">
+                <h4>8147659521</h4>
+            </td>
+            <td  class="sideimg">
+                <img  src="/static/call5.png">
+            </td>
+        </tr>
+        <tr   class="sidebar">
+            <td   class="details">
+                <h4>shailugouda398@gmail.com</h4>
+            </td>
+            <td    class="sideimg">
+                <img src="/static/email.png">
+            </td>
+        </tr>
+    </table>
+</div>
+ 
+
+    <footer>
+        <h4>2024 &copy All rights are reserved </h4>
+    </footer>
+    
+</body>
+</html>

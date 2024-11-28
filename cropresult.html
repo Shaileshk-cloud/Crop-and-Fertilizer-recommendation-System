@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop and Fertilizer Recomendation</title>
+    <link rel="shortcut icon"  href="/static/blacktree.png"  type="imag/png">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-image:url('/static/background3.jpg');
+            background-size: cover;
+            
+        }
+        header{
+            text-align:center;
+            background-color: rgba(213, 214, 200, 0.694);
+             
+            color: #ffffff;
+            margin:0;
+            padding:20px;
+            position: sticky;
+            width:100%;
+            top:0;
+        }
+        footer{
+            text-align:center;
+            background-color: black;
+            color: #ffffff;
+            margin:0;
+            padding:1px;
+            position:fixed;
+            bottom: 0;
+            width:100%;
+        }
+      
+        
+      
+        td{
+            padding:20px;
+
+        }
+      
+        a
+        {
+            padding:13px 60px;
+            border-radius: 60px;
+            border:2px solid #ffffff;
+            background-color: #ffffff;
+            font-weight: bold;
+            font-size: large;
+            margin-left: 130px;
+            color: rgba(50, 71, 135, 0.944);
+            
+            
+        }
+        a:hover{
+            background-color:rgba(50, 71, 135, 0.944) ;
+            color:#ffffff;
+             border:2px solid rgba(50, 71, 135, 0.944);
+        }
+        input[type="submit"]:hover{
+            border:2px solid #ffffff;
+            background-color:#000000;
+            color:#ffffff;
+            transition: 0.5s;
+        }
+        h1{
+           text-shadow: 3px 3px 3px   rgb(6, 2, 2);
+        }
+        label{
+            font-size: large;
+            font-weight: bold;
+        }
+        .table2{
+           
+            background-size: cover;
+             background-image: linear-gradient(rgba(0,0,0,0.3)0%,rgba(0,0,0,0.99)100%),
+              url('/static/fertilize2.jpg');
+                 
+            background-color: rgba(137, 148, 149, 0.527);
+            margin:auto;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 50px;
+            width:600px;
+            height:400px;
+            cursor: not-allowed;
+            box-shadow:5px 5px 5px  rgb(180, 127, 54) ;
+            display:inline-block;
+            margin-left:70px;
+        }
+        .table1{
+            
+            background-size: cover;
+             background-image: linear-gradient(rgba(0,0,0,0.1)0%,rgba(0,0,0,0.99)100%),
+              url('/static/background4.jpg');
+                 
+            background-color: rgba(137, 148, 149, 0.527);
+            margin:auto;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 50px;
+            width:600px;
+            height:400px;
+            cursor: not-allowed;
+            box-shadow:5px 5px 5px  rgb(180, 127, 54) ;
+            display:inline-block;
+            margin-left:70px;
+        }
+        .table1:hover{
+            box-shadow: 15px 15px 15px  rgb(202, 106, 50);
+            transition:step-end;
+            color: #ffffff;
+         
+        }
+        .table2:hover{
+            box-shadow: 15px 15px 15px  rgb(202, 106, 50);
+            transition:step-end;
+            color:#acd0d3da;
+         
+        }
+        
+        
+        .table3{
+           
+              margin:auto;
+              padding: 50px;
+              border-radius: 20px;
+              margin-top: 20px;
+              width:600px;
+              margin:auto;
+              margin-top: 25px;
+             
+        }
+        .table-data{
+            background-color: aqua;
+            border:5px solid red;
+            width:300px;
+            left:200px;
+            padding: 50px;
+        
+
+        }
+        h3{
+            font-size:x-large;
+            font-weight: 1000;
+            text-decoration: solid;
+            text-transform: uppercase;
+            color:#ffffff;
+        }
+
+
+       
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CROP RECOMENDATION SYSTEM</h1>
+    </header>
+  <div  style="display: flex;">
+    <table class="table1">
+        <tr>
+            <td>
+                <h3>BEST SUITABLE CROP :</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                  <h3>
+                   <ul> {% for crop in crops %}
+                    <li>{{ crop }}</li>
+                        {% endfor %}
+                    </ul>
+                  </h3>
+            </td>
+        </tr>
+
+    </table>
+
+    <table class="table2">
+        <tr>
+            <td>
+                <h3>RECOMMENDED FERTILIZER :</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>
+                    <ul>
+                        {% for fertilizer in fertilizers %}
+                        <li>{{ fertilizer }}</li>
+                        {% endfor %}
+                    </ul>
+                </h3>
+            </td>
+        </tr>
+    </table>
+
+
+  
+  
+  </div>
+  <table  class="table3">
+    <tr>
+        <td>
+            <a  href="/">BACK</a>
+        </td>
+    </tr>
+
+  </table>
+    
+    
+
+    <!--<footer>
+        <h4>2024 &copy All rights are reserved </h4>
+    </footer>>-->
+    
+</body>
+</html>
